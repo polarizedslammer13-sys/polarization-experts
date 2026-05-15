@@ -1,0 +1,27 @@
+{
+  "mean_pc": [
+    0.21661409735679626,
+    0.23537453055381774,
+    0.08118947297334671,
+    0.06639008849859238
+  ],
+  "target_mean": 0.14989204734563827,
+  "calib": [
+    0.6919773420782643,
+    0.63682356367511,
+    1.8462005215238384,
+    2.2577473646358572
+  ],
+  "train_indices_hash": "sha256:e1cdf89f071f54061c842fc7c02dc1ee1ae0fa2ad37f590df4e2cc0efe4f5341",
+  "n_train_samples": 1600,
+  "color_channel": 2,
+  "pol_channels": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "speckle_file": "/root/autodl-tmp/facedataset_0825/original/speckles6000_og.npy",
+  "n_pixels_per_channel": 104857600,
+  "computed_on": "2026-05-15T22:57:32"
+}
