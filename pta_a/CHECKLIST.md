@@ -50,7 +50,10 @@ before launching the 25-run sweep.
 
 ## E. Loss
 
-- [ ] `AdvancedLoss` weights `0.25 / 0.25 / 0.35 / 0.15` (MSE / L1 / SSIM / VGG).
+- [ ] `AdvancedLoss` weights `0.25 / 0.25 / 0.35 / 0.15`
+      (PCC / SSIM / VGG-perceptual / Sobel-edge).
+      Note: there is **no** L1 or MSE term in the training loss; MSE
+      only appears in `evaluate()` as a reporting metric.
 - [ ] `loss_fn.use_perceptual is True` — script aborts otherwise.
       This guarantees A0..A3 are compared under identical loss.
 
@@ -62,7 +65,7 @@ before launching the 25-run sweep.
 
 ## G. Self-checks at script startup (fail fast)
 
-- [ ] norm_stats hash match.
+- [ ] norm_stats hash match (A0/A1/A2 only — A2-raw and A3 do not load norm_stats).
 - [ ] Stokes init numerical match (A0/A1 only).
 - [ ] Parameter-count delta vs A3 reference model:
       - A2 / A2-raw: +1296 (enc1 1ch → 4ch first conv: `48*3*3*(4-1)` = 1296)

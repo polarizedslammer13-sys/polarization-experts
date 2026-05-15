@@ -186,6 +186,9 @@ class StokesDataset(Dataset):
         oi = self.idx[i]
         si = oi * 3 + self.cc
         if self.mode == "A3":
+            # A3 reproduces run_exp2_baseline.py exactly: 45° polarisation
+            # channel, raw / 255. Hard-coded index 2 (not POL_CHANNELS[1]) so
+            # this path is stable even if POL_CHANNELS order is reshuffled.
             sp = self.sp[si, 2].astype(np.float32) / 255.0   # pol2 (45°)
             x = torch.from_numpy(sp).unsqueeze(0).float()
         else:
